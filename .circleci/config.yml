@@ -20,6 +20,8 @@
 #      - test
 jobs:
   standard_make:
+    machine:
+      - image: circleci
     steps:
       - run: make
 workflows:
