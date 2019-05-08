@@ -24,7 +24,7 @@ jobs:
       - image: koalaman/shellcheck-alpine:stable
     steps:
       - type: shell
-        shell: /bin/bash --login
+        shell: /bin/bash
         command: |
           make
 workflows:
