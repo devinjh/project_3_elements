@@ -21,7 +21,7 @@
 jobs:
   standard_make:
     docker:
-      - image: circleci
+      - image: koalaman/shellcheck-alpine:stable
     steps:
       - run: make
 workflows:
