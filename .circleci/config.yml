@@ -23,6 +23,7 @@ jobs:
     docker:
       - image: koalaman/shellcheck-alpine:stable
     steps:
+      - checkout
       - run: make
 workflows:
   version: 2
