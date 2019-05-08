@@ -18,17 +18,30 @@
 #    jobs:
 #      - build
 #      - test
+
+#jobs:
+#  standard_make:
+#    docker:
+#      - image: koalaman/shellcheck-alpine:stable
+#    steps:
+#      - type: shell
+#        shell: /bin/bash
+#        command: |
+#          make
+#workflows:
+#  version: 2
+#  build_and_test:
+#    jobs:
+#      - standard_make
+
+version: 2
 jobs:
-  standard_make:
-    docker:
-      - image: koalaman/shellcheck-alpine:stable
-    steps:
-      - type: shell
-        shell: /bin/bash
-        command: |
-          make
+  build:
+    machine: true
+    command: |
+      make
 workflows:
   version: 2
-  build_and_test:
+  test_run:
     jobs:
-      - standard_make
+      - build
