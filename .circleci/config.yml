@@ -14,9 +14,13 @@ jobs:
       - run: make # Makes the argon2 executable
       - run: make bench # Makes the bench exectuable
       - run: make test # Makes the test exectuable, this verifies the installations
-      - run: echo -n "password" | ./argon2 somesalt -i -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program installed correctly
-      - run: echo -n "password" | ./argon2 somesalt -d -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program installed correctly
-      - run: echo -n "password" | ./argon2 somesalt -id -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program installed correctly
+      - run: echo "The test will now begin" # Showing that the tests will begin
+      - run: echo -n "password" | ./argon2 somesalt -i -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
+      - run: echo -n "password" | ./argon2 somesalt -d -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
+      - run: echo -n "password" | ./argon2 somesalt -id -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
+      - run: echo -n "password" | ./argon2 salt -i -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
+      - run: echo -n "password" | ./argon2 salt -d -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
+      - run: echo -n "password" | ./argon2 salt -id -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
   #make:
   #  machine: true
   #  steps:
