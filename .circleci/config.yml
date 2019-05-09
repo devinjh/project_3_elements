@@ -21,8 +21,13 @@ jobs:
     steps: 
       - checkout
       - run: git clone https://github.com/devinjh/project_3_elements.git
+  make:
+    machine: true
+    steps:
+      - run: make
 
 workflows:
   workflow:
     jobs:
       - build
+      - make
