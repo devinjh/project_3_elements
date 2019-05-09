@@ -2,7 +2,7 @@
 version: 2.1
 
 job:
-  job_test: # The job name
+  build: # The job name
     machine: true # executor
     steps:
       run:
@@ -11,4 +11,4 @@ workflow:
   version: 2.1
   workflow_test: # workflow name
     jobs:
-      job_test
+      build
