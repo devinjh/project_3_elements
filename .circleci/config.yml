@@ -25,4 +25,3 @@ workflows:
   workflow:
     jobs:
       - foo
-      - bar
