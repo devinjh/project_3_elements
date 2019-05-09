@@ -1,34 +1,26 @@
 
-# Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
-#version: 2.1
-#
-#job:
-#  build: # The job name
-#    machine: true # executor
-#    steps:
-#      run:
-#        make
-#workflow:
-#  version: 2.1
-#  workflow_test: # workflow name
-#    jobs:
-#      build
-
+# Using the latest version of CircleCI as of today (5/9/2019)
 version: 2.1
+
+# Listing out the jobs
 jobs:
+  # The build job
   build:
+    # It's using bash commands, so it should be run on the mahine
     machine: true
-    steps: 
-      - checkout
-      - run: git clone https://github.com/devinjh/project_3_elements.git
-      - run: make
+    steps:
+      - checkout # Setting up an image to work in
+      - run: git clone https://github.com/devinjh/project_3_elements.git # Downloading all the code from project repo
+      - run: make # Running make to build the code
   #make:
   #  machine: true
   #  steps:
   #    - run: make
-
+# Workflows
 workflows:
+  # The workflow
   workflow:
+    # All the jobs that must be performed
     jobs:
-      - build
+      - build # Running the build job
       #- make
