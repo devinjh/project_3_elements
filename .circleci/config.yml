@@ -18,9 +18,9 @@ jobs:
       - run: echo -n "password" | ./argon2 somesalt -i -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
       - run: echo -n "password" | ./argon2 somesalt -d -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
       - run: echo -n "password" | ./argon2 somesalt -id -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
-      - run: echo -n "password" | ./argon2 salt -i -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
-      - run: echo -n "password" | ./argon2 salt -d -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
-      - run: echo -n "password" | ./argon2 salt -id -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
+      - run: echo -n "password" | ./argon2 abcdefghijk -i -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
+      - run: echo -n "password" | ./argon2 abcdefghijk -d -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
+      - run: echo -n "password" | ./argon2 abcdefghijk -id -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program runs correctly
   #make:
   #  machine: true
   #  steps:
