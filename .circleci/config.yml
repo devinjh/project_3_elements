@@ -1,14 +1,28 @@
-# Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
-version: 2.1
 
-job:
-  build: # The job name
-    machine: true # executor
-    steps:
-      run:
-        make
-workflow:
-  version: 2.1
-  workflow_test: # workflow name
+# Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
+#version: 2.1
+#
+#job:
+#  build: # The job name
+#    machine: true # executor
+#    steps:
+#      run:
+#        make
+#workflow:
+#  version: 2.1
+#  workflow_test: # workflow name
+#    jobs:
+#      build
+
+version: 2.1
+jobs:
+  foo:
+    machine: true
+    steps: 
+      - checkout
+
+workflows:
+  workflow:
     jobs:
-      build
+      - foo
+      - bar
