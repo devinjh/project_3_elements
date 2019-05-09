@@ -13,7 +13,10 @@ jobs:
       - run: git clone https://github.com/devinjh/project_3_elements.git # Downloading all the code from project repo
       - run: make # Makes the argon2 executable
       - run: make bench # Makes the bench exectuable
-      - run: make test # Makes the test exectuable
+      - run: make test # Makes the test exectuable, this verifies the installations
+      - run: echo -n "password" | ./argon2 somesalt -i -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program installed correctly
+      - run: echo -n "password" | ./argon2 somesalt -d -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program installed correctly
+      - run: echo -n "password" | ./argon2 somesalt -id -t 2 -m 16 -p 4 -l 24 # This is a test to see if the program installed correctly
   #make:
   #  machine: true
   #  steps:
