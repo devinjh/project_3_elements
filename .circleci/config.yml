@@ -16,7 +16,7 @@
 
 version: 2.1
 jobs:
-  foo:
+  build:
     machine: true
     steps: 
       - checkout
@@ -24,4 +24,4 @@ jobs:
 workflows:
   workflow:
     jobs:
-      - foo
+      - build
